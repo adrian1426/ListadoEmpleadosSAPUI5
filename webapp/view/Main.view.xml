@@ -1,0 +1,69 @@
+<mvc:View controllerName="App_Lista.App_Lista.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page class="page" id="page" title="{i18n>title}">
+					<content>
+						<Panel class="headerDatosEmpleado" id="categoria">
+							<Label class="label" text="Número de empleado: {Model_Norwind>/Employees(1)/EmployeeID}"/>
+							<Label class="label" text="Nombre: {Model_Norwind>/Employees(1)/FirstName}"/>
+							<Label class="label" text="Apellido: {Model_Norwind>/Employees(1)/LastName}"/>
+							<Label class="label" text="Categoria: {Model_Norwind>/Categories(1)/CategoryName}"/>
+						</Panel>
+						<Panel class="lista" expandable="true">
+							<List
+								headerText="Lista de empleados"
+								items="{Model_Norwind>/Employees}" >
+								<StandardListItem
+									title="{Model_Norwind>EmployeeID} - {Model_Norwind>FirstName} - {Model_Norwind>LastName}"
+								/>
+							</List>
+						</Panel>
+						<Panel class="lista">
+							<Table
+								inset="false"
+								items="{
+									path: 'Model_Norwind>/Employees',
+									sorter: {
+										path: 'Model_Norwind>FirstName'
+									}
+								}">
+								<columns>
+									<Column
+										width="12em">
+										<Text text="Id" />
+									</Column>
+									<Column
+										minScreenWidth="Tablet"
+										demandPopin="true">
+										<Text text="Nombre" />
+									</Column>
+									<Column
+										minScreenWidth="Desktop"
+										demandPopin="true"
+										hAlign="End">
+										<Text text="Apellido" />
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<ObjectIdentifier
+												title="{Model_Norwind>EmployeeID}"
+											/>
+											<Text
+												text="{Model_Norwind>FirstName}" />
+											<Text
+												text="{Model_Norwind>LastName}" 
+											/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</Panel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

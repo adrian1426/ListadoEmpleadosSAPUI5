@@ -1,0 +1,25 @@
+/* Enter your custom styles here */
+.sapMBarPH{
+	background : #333333;
+}
+
+.sapMBarPH span{
+	color : white;
+}
+
+.page{
+	background : #ffffff;	
+}
+
+.headerDatosEmpleado{
+	background : #706c61;
+}
+
+.label{
+	display: block;
+	color: white;
+}
+
+.lista{
+	background : #e1f4f3;
+}
